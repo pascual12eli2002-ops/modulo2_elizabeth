@@ -1,0 +1,134 @@
+/* box-sizing aplicado al inicio de la página */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+}
+
+/* Estilos generales */
+body {
+    background-color: lightgrey;
+    color: blue;
+    text-align: center;
+}
+
+/* Barra de navegación */
+.nav {
+    background-color: #e6f0ff;
+    padding: 20px;
+    border-bottom: 3px solid blue;
+
+    display: flex;                 /* coloca elementos en línea */
+    justify-content: space-between; /* separa izquierda / derecha */
+    align-items: center;           /* centra verticalmente */
+}
+
+
+.nav h2 {
+    font-size: 24px;
+}
+
+.nav nav {
+    display: flex;
+    gap: 20px; /* espacio entre enlaces */
+}
+
+
+.nav a {
+    margin: 10px;
+    color: blue;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+/* hover en enlaces */
+.nav a:hover {
+    text-decoration: underline;
+}
+
+/* Sección principal */
+.hero {
+    background-color: white;
+    margin: 20px;
+    padding: 60px 20px;
+    border: 3px solid blue;
+}
+
+.hero h1 {
+    font-size: 48px;
+}
+
+.hero p {
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+/* Botón */
+.hero button {
+    padding: 15px 25px;
+    font-size: 24px;
+    background-color: blue;
+    color: white;
+    border: 2px solid blue;
+    cursor: pointer;
+}
+
+/* hover botón */
+.hero button:hover {
+    background-color: lightgrey;
+    color: blue;
+}
+
+/* Contenedor de tarjetas */
+.contenedor {
+    background-color: #d9d9d9;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Box Model completo */
+.card {
+    width: 250px;
+    background-color: white;
+    padding: 20px;          /* padding */
+    border: 3px solid blue; /* border */
+    margin: 10px;           /* margin */
+    font-size: 24px;
+}
+
+/* hover tarjetas */
+.card:hover {
+    background-color: #e6f0ff;
+}
+
+/* Footer */
+.footer {
+    margin: 20px;
+    font-size: 24px;
+}
+
+/* Diseño responsivo */
+@media (max-width: 768px) {
+    .contenedor {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+}
+
+/* Ajustes para móviles */
+@media (max-width: 600px) {
+    .nav {
+        flex-direction: column;
+    }
+
+    .nav nav {
+        margin-top: 10px;
+    }
+}
