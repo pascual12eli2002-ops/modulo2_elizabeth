@@ -1,134 +1,124 @@
-/* box-sizing aplicado al inicio de la página */
+/* ==============================
+   BOX-SIZING GLOBAL
+================================ */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: Arial;
 }
 
-/* Estilos generales */
+/* ==============================
+   HERENCIA (CONTENEDOR PADRE)
+================================ */
 body {
     background-color: lightgrey;
-    color: blue;
-    text-align: center;
+    color: blue;           /* SE HEREDA */
+    font-family: Arial;    /* SE HEREDA */
+    font-size: 24px;       /* SE HEREDA */
+    text-align: center;    /* SE HEREDA */
 }
 
-/* Barra de navegación */
+/* ==============================
+   NAVEGACIÓN (HEREDA COLOR Y FUENTE)
+================================ */
 .nav {
     background-color: #e6f0ff;
-    padding: 20px;
-    border-bottom: 3px solid blue;
+    padding: 20px;         /* NO SE HEREDA */
+    border-bottom: 3px solid blue; /* NO SE HEREDA */
 
-    display: flex;                 /* coloca elementos en línea */
-    justify-content: space-between; /* separa izquierda / derecha */
-    align-items: center;           /* centra verticalmente */
-}
-
-
-.nav h2 {
-    font-size: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .nav nav {
     display: flex;
-    gap: 20px; /* espacio entre enlaces */
+    gap: 20px;
 }
 
-
-.nav a {
-    margin: 10px;
-    color: blue;
+/* Selector de tipo */
+a {
     text-decoration: none;
-    font-size: 24px;
 }
 
-/* hover en enlaces */
+/* Selector de clase + pseudoclase */
 .nav a:hover {
     text-decoration: underline;
 }
 
-/* Sección principal */
+/* ==============================
+   HERO
+================================ */
 .hero {
     background-color: white;
     margin: 20px;
-    padding: 60px 20px;
+    padding: 60px;
     border: 3px solid blue;
 }
 
-.hero h1 {
-    font-size: 48px;
-}
-
+/* ==============================
+   CONTROLANDO HERENCIA
+================================ */
 .hero p {
-    font-size: 24px;
-    margin: 20px 0;
+    color: inherit; /* FORZAR HERENCIA DEL PADRE */
 }
 
-/* Botón */
 .hero button {
+    font-size: initial; /* EVITA HERENCIA */
     padding: 15px 25px;
-    font-size: 24px;
     background-color: blue;
     color: white;
     border: 2px solid blue;
-    cursor: pointer;
 }
 
-/* hover botón */
-.hero button:hover {
-    background-color: lightgrey;
-    color: blue;
-}
-
-/* Contenedor de tarjetas */
+/* ==============================
+   CONTENEDOR TARJETAS
+================================ */
 .contenedor {
-    background-color: #d9d9d9;
-    padding: 30px;
     display: flex;
     justify-content: center;
     gap: 20px;
+    padding: 30px;
 }
 
-/* Box Model completo */
+/* Selector de clase */
 .card {
     width: 250px;
     background-color: white;
-    padding: 20px;          /* padding */
-    border: 3px solid blue; /* border */
-    margin: 10px;           /* margin */
-    font-size: 24px;
+    padding: 20px;
+    border: 3px solid blue;
 }
 
-/* hover tarjetas */
-.card:hover {
-    background-color: #e6f0ff;
+/*==============================
+   ESPECIFICIDAD
+================================ */
+
+/* Selector de tipo (1 punto) */
+p {
+    color: blue;
 }
 
-/* Footer */
-.footer {
-    margin: 20px;
-    font-size: 24px;
+/* Selector de clase (10 puntos) */
+.especial p {
+    color: darkblue;
 }
 
-/* Diseño responsivo */
+/* Selector de ID (100 puntos) */
+#lenguas p {
+    color: purple;
+}
+
+/* !important (GANA SIEMPRE) */
+#lenguas p {
+    color: red !important;
+}
+
+/*==============================
+   RESPONSIVE
+================================ */
 @media (max-width: 768px) {
     .contenedor {
         flex-direction: column;
         align-items: center;
-    }
-
-    .card {
-        width: 90%;
-    }
-}
-
-/* Ajustes para móviles */
-@media (max-width: 600px) {
-    .nav {
-        flex-direction: column;
-    }
-
-    .nav nav {
-        margin-top: 10px;
     }
 }

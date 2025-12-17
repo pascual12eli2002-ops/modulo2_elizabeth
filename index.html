@@ -8,8 +8,8 @@
 </head>
 <body>
 
-    <!-- Navegación -->
-    <header class="nav">
+    <!-- CONTENEDOR PADRE (HERENCIA) -->
+    <header class="nav" id="menu-principal">
         <h2>Oaxaca</h2>
         <nav>
             <a href="#">Inicio</a>
@@ -19,42 +19,28 @@
         </nav>
     </header>
 
-    <!-- Sección principal -->
     <section class="hero">
         <h1>Oaxaca</h1>
         <p>Un viaje a través de la cultura, tradiciones y sabores de México</p>
-        <button>Explorar Cultura</button>
+        <button class="btn">Explorar Cultura</button>
     </section>
 
-    <!-- Tarjetas culturales -->
     <section class="contenedor">
         <div class="card">
             <h3>Herencia Zapoteca</h3>
-            <p>
-                Monte Albán y Mitla representan la grandeza de las culturas
-                prehispánicas.
-            </p>
+            <p>Monte Albán y Mitla representan la grandeza prehispánica.</p>
         </div>
 
-        <div class="card">
+        <div class="card especial">
             <h3>Arte Colonial</h3>
-            <p>
-                Iglesias, conventos y arquitectura histórica forman parte del
-                patrimonio cultural.
-            </p>
+            <p>Iglesias y arquitectura histórica de Oaxaca.</p>
         </div>
 
-        <div class="card">
+        <div class="card" id="lenguas">
             <h3>Lenguas Indígenas</h3>
-            <p>
-                Oaxaca es el estado con mayor diversidad lingüística de México.
-            </p>
+            <p>Mayor diversidad lingüística de México.</p>
         </div>
     </section>
-
-    <footer class="footer">
-        <p>Difundiendo la cultura de Oaxaca</p>
-    </footer>
 
 </body>
 </html>
