@@ -1,124 +1,128 @@
-/* ==============================
-   BOX-SIZING GLOBAL
-================================ */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+:root {
+    --primary: #d36f3f;
+    --dark: #3b1f0b;
+    --bg-light: #fdf5ef;
+    --white: #ffffff;
 }
 
-/* ==============================
-   HERENCIA (CONTENEDOR PADRE)
-================================ */
 body {
-    background-color: lightgrey;
-    color: blue;           /* SE HEREDA */
-    font-family: Arial;    /* SE HEREDA */
-    font-size: 24px;       /* SE HEREDA */
-    text-align: center;    /* SE HEREDA */
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    color: var(--dark);
+    background-color: var(--bg-light);
+    scroll-behavior: smooth;
 }
 
-/* ==============================
-   NAVEGACIÓN (HEREDA COLOR Y FUENTE)
-================================ */
+/* Header */
 .nav {
-    background-color: #e6f0ff;
-    padding: 20px;         /* NO SE HEREDA */
-    border-bottom: 3px solid blue; /* NO SE HEREDA */
-
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 15px 8%;
+    background: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-.nav nav {
-    display: flex;
-    gap: 20px;
-}
+.logo { color: var(--primary); font-family: 'Playfair Display', serif; }
 
-/* Selector de tipo */
-a {
+.nav a {
     text-decoration: none;
+    color: var(--dark);
+    margin: 0 15px;
+    font-size: 0.9rem;
+    font-weight: 500;
 }
 
-/* Selector de clase + pseudoclase */
-.nav a:hover {
-    text-decoration: underline;
-}
-
-/* ==============================
-   HERO
-================================ */
-.hero {
-    background-color: white;
-    margin: 20px;
-    padding: 60px;
-    border: 3px solid blue;
-}
-
-/* ==============================
-   CONTROLANDO HERENCIA
-================================ */
-.hero p {
-    color: inherit; /* FORZAR HERENCIA DEL PADRE */
-}
-
-.hero button {
-    font-size: initial; /* EVITA HERENCIA */
-    padding: 15px 25px;
-    background-color: blue;
+.btn-nav {
+    background: var(--primary);
     color: white;
-    border: 2px solid blue;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
 }
 
-/* ==============================
-   CONTENEDOR TARJETAS
-================================ */
-.contenedor {
+/* Hero */
+.hero {
+    height: 90vh;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('hero.jpg') center/cover;
     display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 20px;
-    padding: 30px;
+    text-align: center;
+    color: white;
 }
 
-/* Selector de clase */
+.hero h1 { font-family: 'Playfair Display', serif; font-size: 5rem; margin: 0; }
+.hero .subtitle { font-size: 1.5rem; margin-bottom: 10px; }
+.hero .description { max-width: 600px; margin: 0 auto 30px; opacity: 0.9; }
+
+.btn {
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    margin: 0 10px;
+    border: none;
+}
+.btn.primary { background: var(--primary); color: white; }
+.btn.secondary { background: rgba(255,255,255,0.2); color: white; border: 1px solid white; backdrop-filter: blur(5px); }
+
+/* Sections */
+.section-container { padding: 80px 8%; }
+.section-header { text-align: center; margin-bottom: 50px; }
+.section-header h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; margin-bottom: 10px; }
+
+/* Grid Cards */
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
 .card {
-    width: 250px;
-    background-color: white;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.card img { width: 100%; height: 250px; object-fit: cover; }
+.card-body { padding: 25px; text-align: left; }
+.card h3 { margin-top: 0; color: var(--dark); }
+
+/* Tradiciones Layout (Especial) */
+.tradiciones-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.main-image img { width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+
+.list-item {
+    display: flex;
+    gap: 20px;
     padding: 20px;
-    border: 3px solid blue;
+    margin-bottom: 15px;
+    background: white;
+    border-radius: 15px;
+    transition: 0.3s;
 }
 
-/*==============================
-   ESPECIFICIDAD
-================================ */
+.list-item.active { background: var(--primary); color: white; }
+.list-item.active h3 { color: white; }
 
-/* Selector de tipo (1 punto) */
-p {
-    color: blue;
-}
+/* Footer */
+.footer { background: #1a3a1a; color: white; padding: 60px 8% 20px; text-align: left; }
+.footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; }
+.footer-col h4 { margin-bottom: 20px; color: #a5c0a5; }
+.footer-col a { display: block; color: white; text-decoration: none; margin-bottom: 10px; opacity: 0.8; }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); margin-top: 40px; padding-top: 20px; text-align: center; font-size: 0.8rem; }
 
-/* Selector de clase (10 puntos) */
-.especial p {
-    color: darkblue;
-}
-
-/* Selector de ID (100 puntos) */
-#lenguas p {
-    color: purple;
-}
-
-/* !important (GANA SIEMPRE) */
-#lenguas p {
-    color: red !important;
-}
-
-/*==============================
-   RESPONSIVE
-================================ */
-@media (max-width: 768px) {
-    .contenedor {
-        flex-direction: column;
-        align-items: center;
-    }
-}
+.newsletter { display: flex; }
+.newsletter input { padding: 10px; border: none; border-radius: 5px 0 0 5px; width: 100%; }
+.newsletter button { background: var(--primary); border: none; padding: 10px; border-radius: 0 5px 5px 0; color: white; }

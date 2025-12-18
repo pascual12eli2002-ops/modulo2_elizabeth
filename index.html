@@ -5,42 +5,194 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oaxaca Cultural</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- CONTENEDOR PADRE (HERENCIA) -->
-    <header class="nav" id="menu-principal">
-        <h2>Oaxaca</h2>
+    <header class="nav">
+        <h2 class="logo">Oaxaca</h2>
         <nav>
-            <a href="#">Inicio</a>
-            <a href="#">Cultura</a>
-            <a href="#">Gastronomía</a>
-            <a href="#">Tradiciones</a>
+            <a href="#inicio">Inicio</a>
+            <a href="#cultura">Cultura</a>
+            <a href="#gastronomia">Gastronomía</a>
+            <a href="#artesanias">Artesanías</a>
+            <a href="#tradiciones">Tradiciones</a>
+            <button class="btn-nav">Explorar</button>
         </nav>
     </header>
 
-    <section class="hero">
-        <h1>Oaxaca</h1>
-        <p>Un viaje a través de la cultura, tradiciones y sabores de México</p>
-        <button class="btn">Explorar Cultura</button>
-    </section>
-
-    <section class="contenedor">
-        <div class="card">
-            <h3>Herencia Zapoteca</h3>
-            <p>Monte Albán y Mitla representan la grandeza prehispánica.</p>
-        </div>
-
-        <div class="card especial">
-            <h3>Arte Colonial</h3>
-            <p>Iglesias y arquitectura histórica de Oaxaca.</p>
-        </div>
-
-        <div class="card" id="lenguas">
-            <h3>Lenguas Indígenas</h3>
-            <p>Mayor diversidad lingüística de México.</p>
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Oaxaca</h1>
+            <p class="subtitle">Un viaje a través de la cultura, tradiciones y sabores de México</p>
+            <p class="description">Descubre la riqueza ancestral de uno de los estados más diversos de México.</p>
+            <div class="hero-btns">
+                <button class="btn primary" onclick="document.getElementById('cultura').scrollIntoView({behavior:'smooth'})">Explorar Cultura →</button>
+                <button class="btn secondary">Ver Galería</button>
+            </div>
         </div>
     </section>
+
+    <section id="cultura" class="section-container">
+        <div class="section-header">
+            <h2>Patrimonio Cultural</h2>
+            <p>Oaxaca es hogar de una de las culturas más ricas y diversas de América Latina</p>
+        </div>
+        <div class="grid-cards">
+            <div class="card">
+                <img src="herencia.jpg" alt="Herencia">
+                <div class="card-body">
+                    <h3>Herencia Zapoteca</h3>
+                    <p>La civilización zapoteca dejó un legado impresionante en Monte Albán y Mitla.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="arte.jpg" alt="Arte">
+                <div class="card-body">
+                    <h3>Arte Colonial</h3>
+                    <p>La arquitectura colonial de la ciudad de Oaxaca es Patrimonio de la Humanidad.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="lenguas.jpg" alt="Lenguas">
+                <div class="card-body">
+                    <h3>Lenguas Indígenas</h3>
+                    <p>Oaxaca es el estado con mayor diversidad lingüística de México.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gastronomia" class="section-container bg-alt">
+        <div class="section-header">
+            <h2>Gastronomía Oaxaqueña</h2>
+            <p>Reconocida como Patrimonio Cultural Inmaterial de la Humanidad por la UNESCO</p>
+        </div>
+        <div class="grid-cards">
+            <div class="card small">
+                <img src="mole.jpg" alt="Mole">
+                <div class="card-body"><h3>Mole Negro</h3><p>El rey de los moles oaxaqueños.</p></div>
+            </div>
+            <div class="card small">
+                <img src="tlayudas.jpg" alt="Tlayudas">
+                <div class="card-body"><h3>Tlayudas</h3><p>Tortilla gigante con sabor único.</p></div>
+            </div>
+            <div class="card small">
+                <img src="mezcal.jpg" alt="Mezcal">
+                <div class="card-body"><h3>Mezcal</h3><p>Bebida espiritual del agave.</p></div>
+            </div>
+            </div>
+    </section>
+
+    <section id="artesanias" class="section-container">
+        <div class="section-header">
+            <h2>Artesanías Tradicionales</h2>
+            <p>Cada pieza cuenta una historia de tradición familiar y maestría transmitida por generaciones</p>
+        </div>
+        <div class="grid-cards-artesanias">
+            <div class="card-artesania">
+                <img src="barro.jpg" alt="Barro Negro">
+                <div class="card-body">
+                    <h3>Barro Negro</h3>
+                    <span class="location">San Bartolo Coyotepec</span>
+                    <p>Cerámica única de color negro brillante creada mediante técnicas ancestrales de cocción sin oxígeno.</p>
+                </div>
+            </div>
+            <div class="card-artesania">
+                <img src="alebrijes.jpg" alt="Alebrijes">
+                <div class="card-body">
+                    <h3>Alebrijes</h3>
+                    <span class="location">San Martín Tilcajete</span>
+                    <p>Fantásticas esculturas de madera tallada y pintada con colores vibrantes representando criaturas imaginarias.</p>
+                </div>
+            </div>
+            <div class="card-artesania">
+                <img src="textiles.jpg" alt="Textiles">
+                <div class="card-body">
+                    <h3>Textiles</h3>
+                    <span class="location">Teotitlán del Valle</span>
+                    <p>Tapetes tejidos a mano con lana teñida naturalmente, usando técnicas zapotecas milenarias.</p>
+                </div>
+            </div>
+            <div class="card-artesania">
+                <img src="barro-rojo.jpg" alt="Barro Rojo">
+                <div class="card-body">
+                    <h3>Barro Rojo</h3>
+                    <span class="location">Santa María Atzompa</span>
+                    <p>Alfarería de barro rojo con acabados vidriados, ideal para uso culinario y decorativo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tradiciones" class="section-container">
+        <div class="section-header">
+            <h2>Tradiciones Vivas</h2>
+            <p>Celebraciones que unen el pasado con el presente en un espectáculo de color y alegría</p>
+        </div>
+        <div class="tradiciones-layout">
+            <div class="main-image">
+                <img src="dia-muertos.jpg" alt="Altar">
+            </div>
+            <div class="list-container">
+                <div class="list-item active">
+                    <div class="icon">💀</div>
+                    <div class="item-text">
+                        <h3>Día de Muertos</h3>
+                        <span>1-2 de Noviembre</span>
+                        <p>Una de las celebraciones más emblemáticas donde se honra a los difuntos.</p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="icon">🎵</div>
+                    <div class="item-text">
+                        <h3>Guelaguetza</h3>
+                        <span>Últimos lunes de Julio</span>
+                        <p>Festival folclórico que muestra las ocho regiones de Oaxaca.</p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="icon">📅</div>
+                    <div class="item-text">
+                        <h3>Noche de Rábanos</h3>
+                        <span>23 de Diciembre</span>
+                        <p>Competencia artística de figuras talladas en rábanos gigantes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Oaxaca</h3>
+                <p>Promoviendo y difundiendo la riqueza cultural de Oaxaca al mundo.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Explora</h4>
+                <a href="#cultura">Cultura</a>
+                <a href="#gastronomia">Gastronomía</a>
+                <a href="#artesanias">Artesanías</a>
+            </div>
+            <div class="footer-col">
+                <h4>Recursos</h4>
+                <a href="#">Guía Turística</a>
+                <a href="#">Eventos</a>
+                <a href="#">Blog</a>
+            </div>
+            <div class="footer-col">
+                <h4>Mantente Informado</h4>
+                <div class="newsletter">
+                    <input type="email" placeholder="Tu email">
+                    <button>📩</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Difusión Cultural de Oaxaca. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
